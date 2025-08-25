@@ -11,14 +11,14 @@
 //! whereas the additional states will try to match the next character without seeking.
 //! If it doesn't match, it will fall back to the next possible defined regular expression.
 
+mod compiler;
 mod definitions;
 mod handles;
-mod transformer;
 
 use std::fmt::Write as _;
 
+use compiler::*;
 use definitions::*;
-use transformer::*;
 
 pub fn generate() -> String {
     let mut output = String::new();
